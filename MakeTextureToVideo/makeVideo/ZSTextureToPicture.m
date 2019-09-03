@@ -70,6 +70,8 @@ typedef struct {
 - (void)setCallback {
     MakeTextureInstance *textureIns = [MakeTextureInstance shared];
     __weak typeof(self) weakSelf = self;
+    
+    // 此地址为示例地址, 如果你使用此demo, 需要换成你自己的地址, 或者换成沙盒地址
     __block NSString *desPath = @"/Users/qmnl-01/Desktop/shoubiao.mp4";
     textureIns.initRecorderCallback = ^(CGSize imageSize) {
         [weakSelf commonInitWithSize:imageSize destPath:desPath];
